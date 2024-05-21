@@ -34,11 +34,12 @@ jobs:
     steps:
       # We'll need to check out the repository so that we can edit the README
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Let's get all the branches
-      -  name: Set executable permissions
-         run: chmod a+x .github/script/check-file.sh
+          
+      - name: Set executable permissions
+        run: chmod a+x .github/script/check-file.sh
 
       # Verify the learner added the file contents
       - name: Check workflow contents, steps
@@ -56,3 +57,4 @@ jobs:
           from_step: 3
           to_step: 4
           branch_name: welcome-workflow
+
